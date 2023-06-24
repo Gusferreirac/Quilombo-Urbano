@@ -1,1 +1,30 @@
 // app global css in SCSS form
+.bg-quilombo_brown {
+  background-color: #4f200d !important;
+}
+
+.bg-quilombo_orange {
+  background-color: #ff8400 !important;
+}
+
+@font-face {
+  font-family: Jaldi;
+  src: url(./fonts/Jaldi-Regular.woff);
+}
+
+@font-face {
+  font-family: Jaldi-Bold;
+  src: url(./fonts/Jaldi-Bold.woff);
+}
+
+.jaldi {
+  font-family: 'Jaldi';
+}
+
+.jaldi-bold {
+  font-family: 'Jaldi-Bold';
+}
+
+.q-btn.btn--no-hover .q-focus-helper {
+  display: none;
+}

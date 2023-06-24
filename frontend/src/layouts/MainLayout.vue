@@ -1,116 +1,73 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <!-- <q-header elevated>
+  <q-layout>
+    <q-header reveal elevated>
       <q-toolbar>
-        <q-btn
+        <a
+          href="/"
           flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
+          class="jaldi-bold text-white"
+          style="font-size: 25px; padding: 20px; text-decoration: none"
+        >
+          QUILOMBO URBANO
+        </a>
+        <q-space />
+        <q-tabs
+          shrink
+          v-if="isMainPage"
+          style="font-size: 17px"
+          class="jaldi-bold"
+        >
+          <q-tab name="about">Sobre</q-tab>
+          <q-tab name="history">História</q-tab>
+          <q-tab name="space">Espaço</q-tab>
+          <q-tab name="join">Participe</q-tab>
+          <q-tab name="gallery">Galeria</q-tab>
+          <q-tab name="contact">Contato</q-tab>
+        </q-tabs>
+        <q-space />
+        <a
+          href="/inicio/entrar"
+          class="jaldi-bold text-white"
+          style="padding: 20px; text-decoration: none; font-size: 20px"
+        >
+          Entrar
+        </a>
+        <q-separator
+          dark
+          vertical
+          inset
+          style="margin-top: 20px; margin-bottom: 20px"
         />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        <a
+          href="/inicio/cadastro"
+          class="jaldi-bold text-white"
+          style="padding: 20px; text-decoration: none; font-size: 20px"
+        >
+          Cadastrar
+        </a>
       </q-toolbar>
     </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer> -->
-
     <q-page-container>
       <router-view />
     </q-page-container>
   </q-layout>
 </template>
+<script>
+import { defineComponent } from 'vue';
 
-<script lang="ts">
-// import { defineComponent, ref } from 'vue';
-// import EssentialLink from 'components/EssentialLink.vue';
-
-// const linksList = [
-//   {
-//     title: 'Docs',
-//     caption: 'quasar.dev',
-//     icon: 'school',
-//     link: 'https://quasar.dev',
-//   },
-//   {
-//     title: 'Github',
-//     caption: 'github.com/quasarframework',
-//     icon: 'code',
-//     link: 'https://github.com/quasarframework',
-//   },
-//   {
-//     title: 'Discord Chat Channel',
-//     caption: 'chat.quasar.dev',
-//     icon: 'chat',
-//     link: 'https://chat.quasar.dev',
-//   },
-//   {
-//     title: 'Forum',
-//     caption: 'forum.quasar.dev',
-//     icon: 'record_voice_over',
-//     link: 'https://forum.quasar.dev',
-//   },
-//   {
-//     title: 'Twitter',
-//     caption: '@quasarframework',
-//     icon: 'rss_feed',
-//     link: 'https://twitter.quasar.dev',
-//   },
-//   {
-//     title: 'Facebook',
-//     caption: '@QuasarFramework',
-//     icon: 'public',
-//     link: 'https://facebook.quasar.dev',
-//   },
-//   {
-//     title: 'Quasar Awesome',
-//     caption: 'Community Quasar projects',
-//     icon: 'favorite',
-//     link: 'https://awesome.quasar.dev',
-//   },
-// ];
-
-// export default defineComponent({
-//   name: 'MainLayout',
-
-//   components: {
-//     EssentialLink,
-//   },
-
-//   setup() {
-//     const leftDrawerOpen = ref(false);
-
-//     return {
-//       essentialLinks: linksList,
-//       leftDrawerOpen,
-//       toggleLeftDrawer() {
-//         leftDrawerOpen.value = !leftDrawerOpen.value;
-//       },
-//     };
-//   },
-// });
+export default defineComponent({
+  name: 'MainLayout',
+  data() {
+    return {
+      isMainPage: false,
+    };
+  },
+  mounted() {
+    var currentUrl = window.location.pathname;
+    if (currentUrl == '/inicio' || currentUrl == '/inicio/') {
+      this.isMainPage = true;
+    }
+  },
+  methods: {},
+});
 </script>
