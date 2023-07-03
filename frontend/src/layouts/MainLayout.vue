@@ -1,6 +1,6 @@
 <template>
   <q-layout>
-    <q-header reveal elevated>
+    <!-- <q-header reveal elevated>
       <q-toolbar>
         <a
           href="/"
@@ -46,28 +46,28 @@
           Cadastrar
         </a>
       </q-toolbar>
-    </q-header>
+    </q-header> -->
     <q-page-container>
       <router-view />
     </q-page-container>
   </q-layout>
 </template>
 <script>
-import { defineComponent } from 'vue';
+// import { defineComponent } from 'vue';
 
-export default defineComponent({
-  name: 'MainLayout',
-  data() {
-    return {
-      isMainPage: false,
-    };
-  },
-  mounted() {
-    var currentUrl = window.location.pathname;
-    if (currentUrl == '/inicio' || currentUrl == '/inicio/') {
-      this.isMainPage = true;
-    }
-  },
-  methods: {},
-});
+// export default defineComponent({
+//   name: 'MainLayout',
+//   data() {
+//     return {
+//       isMainPage: false,
+//     };
+//   },
+//   mounted() {
+//     var currentUrl = window.location.pathname;
+//     if (currentUrl == '/inicio' || currentUrl == '/inicio/') {
+//       this.isMainPage = true;
+//     }
+//   },
+//   methods: {},
+// });
 </script>

@@ -1,16 +1,14 @@
 <template>
   <q-page style="background: #ff8400; overflow: hidden; position: relative">
-    <div class="row" style="height: 100%; width: 100%; position: absolute">
+    <div class="row" style="height: 100%; width: 100%">
       <q-card
         class="shadow-0"
         square
         style="
-          width: 800px;
+          width: 500px;
           height: fit-content;
           background: inherit;
-          margin-left: auto;
-          margin-right: auto;
-          top: 20%;
+          margin: auto;
         "
       >
         <q-card-section>
@@ -57,13 +55,6 @@
           >
         </q-card-section>
       </q-card>
-      <div style="float: right">
-        <img
-          src="../assets/quilombo.png"
-          alt=""
-          style="height: 100%; width: 100%; object-fit: cover"
-        />
-      </div>
     </div>
   </q-page>
 </template>

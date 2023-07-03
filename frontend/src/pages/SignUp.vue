@@ -9,9 +9,7 @@
             min-width: 800px;
             max-width: 100%;
             background: inherit;
-            margin-left: auto;
-            margin-top: 100px;
-            margin-bottom: 100px;
+            margin: auto;
           "
         >
           <q-card-section>
@@ -156,13 +154,6 @@
             >
           </q-card-section>
         </q-card>
-        <div style="margin-left: auto">
-          <img
-            src="../assets/quilombo.png"
-            alt=""
-            style="height: 100%; width: 100%; object-fit: cover"
-          />
-        </div>
       </div>
     </q-page>
   </div>
