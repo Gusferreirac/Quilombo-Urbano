@@ -24,6 +24,10 @@ const routes: RouteRecordRaw[] = [
         path: '/inicio/entrar',
         component: () => import('pages/SignIn.vue'),
       },
+      {
+        path: '/inicio/cadastro_atividade',
+        component: () => import('pages/ActivityForm.vue'),
+      },
     ],
   },
 

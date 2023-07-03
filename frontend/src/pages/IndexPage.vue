@@ -298,6 +298,7 @@
             color="quilombo_brown"
             class="text-white full-width"
             label="Cadastrar Atividade"
+            href="inicio/cadastro_atividade"
           />
         </div>
         <div style="width: 40%">
