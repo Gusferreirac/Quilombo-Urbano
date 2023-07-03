@@ -133,7 +133,9 @@
               <q-select
                 outlined
                 standout="bg-white text-black"
-                v-model="activities"
+                v-model="selectedActivity"
+                :options="activities"
+                multiple
                 label="Atividades"
                 bg-color="white"
               ></q-select>
@@ -175,7 +177,11 @@ export default defineComponent({
       addressNumber: null,
       addressState: null,
       addressCity: null,
-      activities: null,
+      selectedActivity: null,
+      activities: [
+        'Curso de desenho',
+        'Oficina de artesanato'
+      ],
       estados: [
         'Acre',
         'Alagoas',
