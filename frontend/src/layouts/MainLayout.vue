@@ -1,6 +1,6 @@
 <template>
   <q-layout>
-    <!-- <q-header reveal elevated>
+    <q-header v-if="!isMainPage" reveal elevated>
       <q-toolbar>
         <a
           href="/"
@@ -10,20 +10,6 @@
         >
           QUILOMBO URBANO
         </a>
-        <q-space />
-        <q-tabs
-          shrink
-          v-if="isMainPage"
-          style="font-size: 17px"
-          class="jaldi-bold"
-        >
-          <q-tab name="about">Sobre</q-tab>
-          <q-tab name="history">História</q-tab>
-          <q-tab name="space">Espaço</q-tab>
-          <q-tab name="join">Participe</q-tab>
-          <q-tab name="gallery">Galeria</q-tab>
-          <q-tab name="contact">Contato</q-tab>
-        </q-tabs>
         <q-space />
         <a
           href="/inicio/entrar"
@@ -46,28 +32,28 @@
           Cadastrar
         </a>
       </q-toolbar>
-    </q-header> -->
+    </q-header>
     <q-page-container>
       <router-view />
     </q-page-container>
   </q-layout>
 </template>
 <script>
-// import { defineComponent } from 'vue';
+import { defineComponent } from 'vue';
 
-// export default defineComponent({
-//   name: 'MainLayout',
-//   data() {
-//     return {
-//       isMainPage: false,
-//     };
-//   },
-//   mounted() {
-//     var currentUrl = window.location.pathname;
-//     if (currentUrl == '/inicio' || currentUrl == '/inicio/') {
-//       this.isMainPage = true;
-//     }
-//   },
-//   methods: {},
-// });
+export default defineComponent({
+  name: 'MainLayout',
+  data() {
+    return {
+      isMainPage: false,
+    };
+  },
+  mounted() {
+    var currentUrl = window.location.pathname;
+    if (currentUrl == '/inicio' || currentUrl == '/inicio/') {
+      this.isMainPage = true;
+    }
+  },
+  methods: {},
+});
 </script>

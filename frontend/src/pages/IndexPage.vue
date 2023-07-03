@@ -28,6 +28,7 @@
             >Espaço</q-tab
           >
           <q-tab
+            v-if="!isLogged"
             name="join"
             onclick="document.getElementById('join').scrollIntoView();"
             >Participe</q-tab
@@ -44,6 +45,7 @@
           >
         </q-tabs>
         <q-space />
+        <div v-if="!isLogged" class="row">
         <a
           href="/inicio/entrar"
           class="jaldi-bold text-white"
@@ -64,6 +66,30 @@
         >
           Cadastrar
         </a>
+      </div>
+      <div v-else class="row">
+        <p
+          class="jaldi-bold text-white"
+          style="margin: auto; padding: 20px; text-decoration: none; font-size: 20px"
+        >
+          Gustavo
+      </p>
+        <q-separator
+          dark
+          vertical
+          inset
+          style="margin-top: 20px; margin-bottom: 20px"
+        />
+        <a
+          href="/inicio/cadastro"
+          class="jaldi-bold text-white"
+          style="padding: 20px; text-decoration: none; font-size: 20px"
+        >
+          <span class="material-icons">
+            account_circle
+          </span>
+        </a>
+      </div>
       </q-toolbar>
     </q-header>
     <q-footer elevated>
@@ -75,9 +101,9 @@
         >
       </q-toolbar>
     </q-footer>
-    <q-page style="background: #ff8400; overflow: hidden; position: relative">
-      <div class="row" style="height: 100%; width: 100%; position: absolute">
-        <div style="margin: auto; width: 40%">
+    <q-page style="background: #ff8400; position: relative; margin-top:40px">
+      <div class="row" style="height: 100%; width: 100%; position: absolute;">
+        <div style="margin: auto; width: 40%; margin-bottom: 300px;">
           <h1 class="jaldi-bold text-white">TÍTULO</h1>
           <h4 class="jaldi-bold text-white">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non
@@ -92,6 +118,24 @@
           />
         </div>
       </div>
+    </q-page>
+    <q-page v-if="isLogged" style="background-color: #f6f1e9; overflow: hidden; ">
+      <img src="../assets/Backgrounds/background1.png" alt="" style="width: fit-content;">
+      <div class="absolute-center" style="text-align: center;">
+      <h4 class="jaldi-bold" style="color: white; width: 400px;">
+        Acesse a área do estudante
+          para obter informações do cursos
+          em andamento.
+          </h4>
+          <q-btn
+            unelevated
+            size="lg"
+            color="quilombo_brown"
+            class="text-white"
+            label="Área do estudante"
+            href="/inicio/cadastro"
+          />
+        </div>
     </q-page>
     <q-page id="about" style="background-color: #f6f1e9; overflow: auto">
       <div style="width: 40%; float: left">
@@ -216,7 +260,7 @@
         />
       </div>
     </q-page>
-    <q-page id="join" style="background-color: #f6f1e9; overflow: auto">
+    <q-page v-if="!isLogged" id="join" style="background-color: #f6f1e9; overflow: auto">
       <div class="row">
         <div style="width: 40%">
           <img
@@ -241,7 +285,7 @@
         </div>
       </div>
     </q-page>
-    <q-page style="background-color: #f6f1e9; overflow: auto">
+    <q-page v-if="!isLogged" style="background-color: #f6f1e9; overflow: auto">
       <div class="row">
         <div style="width: 40%; margin: auto">
           <h4 class="jaldi-bold" style="color: #4f200d; text-align: justify">
@@ -321,7 +365,7 @@
       </div>
     </q-page>
     <q-page id="contact" style="background-color: #f6f1e9; overflow: auto">
-      <div class="row q-pt-xl">
+      <div class="row q-pt-xl" style="margin-bottom: 200px;">
         <div style="width: 40%; margin-left: 40px">
           <h2 class="jaldi-bold" style="color: #ff8400">Fale Conosco</h2>
           <p class="jaldi" style="font-size: 17px; color: #4f200d">
@@ -425,6 +469,7 @@ export default defineComponent({
       email: null,
       name: null,
       phone: null,
+      isLogged: false,
     };
   },
   methods: {},
